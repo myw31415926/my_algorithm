@@ -1,6 +1,6 @@
 /**
- * desc: 向量排序算法 
- * file: vector_sort.cpp
+ * desc: 向量排序算法测试
+ * file: sort_test.cpp
  *
  * author:  myw31415926
  * date:    20190604
@@ -13,15 +13,19 @@
 #include "sort.hpp"
 #include "utils.hpp"
 
+#define _DEBUG 1
+
 // print vector buffer
-void Print(const int *buf, int num)
+void Print(const int *elem, int num)
 {
+#ifdef _DEBUG
     std::cout << "vector = [";
     int i;
     for (i = 0; i < num - 1; i++) {
-        std::cout << buf[i] << ", ";
+        std::cout << elem[i] << ", ";
     }
-    std::cout << buf[i] << "]" << std::endl;
+    std::cout << elem[i] << "]" << std::endl;
+#endif
 }
 
 void Usage(const char* program)
@@ -47,29 +51,29 @@ int main(int argc, char *argv[])
     flag = atoi(argv[1]);
     num  = atoi(argv[2]);
 
-    int* int_buf = new int[num];
-    utils::Random(int_buf, num, 0xFFFF);    // 生成随机数，写入buf中
+    int* elem = new int[num];
+    utils::Random(elem, num, 0xFFFF);    // 生成随机数，写入buf中
 
     switch (flag) {
         case 1:
-            // Print(int_buf, num);
-            sort::BubbleSort1(int_buf, 0, num);
-            // std::cout << "****** BubbleSort1 ******" << std::endl;
-            // Print(int_buf, num);
+            Print(elem, num);
+            sort::BubbleSort1(elem, 0, num);
+            std::cout << "****** BubbleSort1 ******" << std::endl;
+            Print(elem, num);
             break;
 
         case 2:
-            // Print(int_buf, num);
-            sort::BubbleSort2(int_buf, 0, num);
-            // std::cout << "****** BubbleSort2 ******" << std::endl;
-            // Print(int_buf, num);
+            Print(elem, num);
+            sort::BubbleSort2(elem, 0, num);
+            std::cout << "****** BubbleSort2 ******" << std::endl;
+            Print(elem, num);
             break;
 
         case 3:
-            // Print(int_buf, num);
-            sort::MergeSort(int_buf, 0, num);
-            // std::cout << "****** MergeSort ******" << std::endl;
-            // Print(int_buf, num);
+            Print(elem, num);
+            sort::MergeSort(elem, 0, num);
+            std::cout << "****** MergeSort ******" << std::endl;
+            Print(elem, num);
             break;
 
         default:

@@ -1,6 +1,6 @@
-# sort_test Makefile
+# search_test Makefile
 
-TARGET = ../_build/sort_test
+TARGET = ../_build/search_test
 
 CC = g++
 INCS =
