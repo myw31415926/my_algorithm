@@ -32,9 +32,9 @@ void Usage(const char* program)
 {
     fprintf(stdout, "\nusage:\n");
     fprintf(stdout, "\t%s flag num\n", program);
-    fprintf(stdout, "\tflag: \t1 - BubbleSort1\n");
-    fprintf(stdout, "\t\t2 - BubbleSort2\n");
-    fprintf(stdout, "\t\t3 - MergeSort\n");
+    fprintf(stdout, "\tflag: \t1 - BubbleSort1; 101 - BubbleSort1 no print\n");
+    fprintf(stdout, "\t\t2 - BubbleSort2; 102 - BubbleSort2 no print\n");
+    fprintf(stdout, "\t\t3 - MergeSort; 103 - MergeSort no print\n");
 }
 
 // main
@@ -62,6 +62,10 @@ int main(int argc, char *argv[])
             Print(elem, num);
             break;
 
+        case 101:
+            sort::BubbleSort1(elem, 0, num);
+            break;
+
         case 2:
             Print(elem, num);
             sort::BubbleSort2(elem, 0, num);
@@ -69,11 +73,19 @@ int main(int argc, char *argv[])
             Print(elem, num);
             break;
 
+        case 102:
+            sort::BubbleSort2(elem, 0, num);
+            break;
+
         case 3:
             Print(elem, num);
             sort::MergeSort(elem, 0, num);
             std::cout << "****** MergeSort ******" << std::endl;
             Print(elem, num);
+            break;
+
+        case 103:
+            sort::MergeSort(elem, 0, num);
             break;
 
         default:

@@ -6,6 +6,7 @@
 | :--: | :--: |
 | fibonacci | 斐波那契数列实现算法 |
 | sort | 排序算法 |
+| search | 查找算法 |
 
 
 
@@ -29,3 +30,12 @@
 * 起泡排序`BubbleSort1`，时间复杂度 **O(n^2)**
 * 改进后的起泡排序`BubbleSort2`，时间复杂度 **O(n^2)**
 * 归并排序`MergeSort`，时间复杂度 **O(nlogn)**
+
+
+
+## search
+
+查找算法，包含：
+
+* 二分查找`BinSearch`，时间复杂度 **O(logn)**
+* Fibonacci查找`FibSearch`，时间复杂度 **O(logn)**
