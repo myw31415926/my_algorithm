@@ -34,6 +34,8 @@ void Usage(const char* program)
     fprintf(stdout, "\t%s flag target\n", program);
     fprintf(stdout, "\tflag: \t1 - BinSearch\n");
     fprintf(stdout, "\t\t2 - FibSearch\n");
+    fprintf(stdout, "\t\t3 - BinSearchV2\n");
+    fprintf(stdout, "\t\t4 - BinSearchUp\n");
 }
 
 // main
@@ -62,8 +64,20 @@ int main(int argc, char *argv[])
 
         case 2:
             Print(elem, num);
-            std::cout << "BinSearch ret = " 
-                      << search::BinSearch(target, elem, 0, num) << std::endl;
+            std::cout << "FibSearch ret = " 
+                      << search::FibSearch(target, elem, 0, num) << std::endl;
+            break;
+
+        case 3:
+            Print(elem, num);
+            std::cout << "BinSearchV2 ret = " 
+                      << search::BinSearchV2(target, elem, 0, num) << std::endl;
+            break;
+
+        case 4:
+            Print(elem, num);
+            std::cout << "BinSearchUp ret = " 
+                      << search::BinSearchUp(target, elem, 0, num) << std::endl;
             break;
 
         default:

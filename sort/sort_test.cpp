@@ -34,7 +34,7 @@ void Usage(const char* program)
     fprintf(stdout, "\t%s flag num\n", program);
     fprintf(stdout, "\tflag: \t1 - BubbleSort1; 101 - BubbleSort1 no print\n");
     fprintf(stdout, "\t\t2 - BubbleSort2; 102 - BubbleSort2 no print\n");
-    fprintf(stdout, "\t\t3 - MergeSort; 103 - MergeSort no print\n");
+    fprintf(stdout, "\t\t3 - MergeSort;   103 - MergeSort no print\n");
 }
 
 // main
