@@ -125,6 +125,34 @@ void MergeSort(T* elem, Rank lo, Rank hi)
     Merge(elem, lo, mid, hi);   // 归并
 }
 
+///////////////////////////////////////////////////////////////////////////////
+/**
+ * 选择排序算法
+ * 每次循环找到最大元素，放置到末尾
+ */
+template<typename T>
+static Rank SelectMax(T* elem, Rank lo, Rank hi)
+{
+    Rank max = lo;
+    for (Rank cur = lo; cur < hi; cur++) {
+        if (elem[cur] >= elem[max]) {   // 必须是>=，选最靠后的最大值，保证稳定性
+            max = cur;
+        }
+    }
+    return max;
+}
+
+template<typename T>
+void SelectSort(T* elem, Rank lo, Rank hi)
+{
+    Rank max;
+    while (hi - lo > 1) {
+        max = SelectMax(elem, lo, hi);
+        // std::cout << "max = " << max << std::endl;
+        Swap(elem[max], elem[--hi]);    // 交换最大元素和末尾元素
+    }
+}
+
 }   // sort
 
 #endif // _SORT_V01_H

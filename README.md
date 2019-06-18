@@ -30,6 +30,7 @@
 * 起泡排序`BubbleSort1`，时间复杂度 **O(n^2)**
 * 改进后的起泡排序`BubbleSort2`，时间复杂度 **O(n^2)**
 * 归并排序`MergeSort`，时间复杂度 **O(nlogn)**
+* 选择排序`SelectSort`，时间复杂度 **O(n^2)**
 
 
 

@@ -35,6 +35,7 @@ void Usage(const char* program)
     fprintf(stdout, "\tflag: \t1 - BubbleSort1; 101 - BubbleSort1 no print\n");
     fprintf(stdout, "\t\t2 - BubbleSort2; 102 - BubbleSort2 no print\n");
     fprintf(stdout, "\t\t3 - MergeSort;   103 - MergeSort no print\n");
+    fprintf(stdout, "\t\t4 - SelectSort;  104 - SelectSort no print\n");
 }
 
 // main
@@ -86,6 +87,17 @@ int main(int argc, char *argv[])
 
         case 103:
             sort::MergeSort(elem, 0, num);
+            break;
+
+        case 4:
+            Print(elem, num);
+            sort::SelectSort(elem, 0, num);
+            std::cout << "****** SelectSort ******" << std::endl;
+            Print(elem, num);
+            break;
+
+        case 104:
+            sort::SelectSort(elem, 0, num);
             break;
 
         default:
