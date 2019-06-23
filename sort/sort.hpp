@@ -13,6 +13,7 @@
 #define _SORT_V01_H
 
 #include <iostream>
+#include "search.hpp"
 
 namespace sort {
 
@@ -150,6 +151,29 @@ void SelectSort(T* elem, Rank lo, Rank hi)
         max = SelectMax(elem, lo, hi);
         // std::cout << "max = " << max << std::endl;
         Swap(elem[max], elem[--hi]);    // 交换最大元素和末尾元素
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+/**
+ * 插入排序算法
+ * 将元素插入到有序的前缀部分
+ */
+template<typename T>
+void InsertSort(T* elem, Rank lo, Rank hi)
+{
+    for (Rank i = lo + 1; i < hi; i++) {    // 从第2个元素开始，单个元素肯定有序
+        T e = elem[i];
+
+        // 用二分法查找元素i，返回不大于e的最后一个元素的下标，r表示e要插入的位置
+        Rank r = search::BinSearchUp(e, elem, lo, i) + 1;
+        // std::cout << "BinSearchUp elem = " << e << ", rank = " << r << std::endl; 
+
+        // 将r插入到有序部分elem[lo, i)中，会有元素后移
+        for (Rank j = i; j > r; j--) {  // 从后向前覆盖元素
+            elem[j] = elem[j - 1];
+        }
+        elem[r] = e;
     }
 }
 

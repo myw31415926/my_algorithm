@@ -6,7 +6,7 @@ CC = g++
 INCS =
 SRCS = $(wildcard *.cpp)
 
-CFLAGS = -Wall -g -I../include/
+CFLAGS = -Wall -g -I../include/ -I../search
 LFLAGS =
 
 $(TARGET): $(SRCS)
